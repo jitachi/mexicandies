@@ -18,6 +18,33 @@
         },
       };
     </script>
+    <style>
+      /* Lazy loading styles */
+      .lazy-load {
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+        background-size: 200% 100%;
+        animation: loading 1.5s infinite;
+      }
+      
+      .lazy-load.loaded {
+        opacity: 1;
+        animation: none;
+        background: none;
+      }
+      
+      @keyframes loading {
+        0% { background-position: 200% 0; }
+        100% { background-position: -200% 0; }
+      }
+      
+      /* Optimize image rendering */
+      img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+      }
+    </style>
   </head>
   <body class="bg-white min-h-screen p-8">
     <div class="max-w-4xl mx-auto">
@@ -66,7 +93,7 @@
             class="bg-white rounded-lg  p-6 border border-gray-200"
           >
             <div class="flex flex-col">
-              <img src="assets/01-bubulubu.png" alt="Bubulubu" class="w-full h-48 mb-4 rounded-lg object-contain bg-white" />
+              <img data-src="assets/01-bubulubu.png" alt="Bubulubu" class="w-full h-48 mb-4 rounded-lg object-contain bg-white lazy-load" loading="lazy" />
               <h4 class="text-xl font-bold text-gray-800 mb-2">
                   Bubulubu Mini
                 </h4>
@@ -86,7 +113,7 @@
             class="bg-white rounded-lg  p-6 border border-gray-200"
           >
             <div class="flex flex-col">
-              <img src="assets/01-tinlarin.png" alt="Tin Larín" class="w-full h-48 mb-4 rounded-lg object-contain bg-white" />
+              <img data-src="assets/01-tinlarin.png" alt="Tin Larín" class="w-full h-48 mb-4 rounded-lg object-contain bg-white lazy-load" loading="lazy" />
               <h4 class="text-xl font-bold text-gray-800 mb-2">
                 Tin Larín Mini
               </h4>
@@ -105,7 +132,7 @@
             class="bg-white rounded-lg  p-6 border border-gray-200"
           >
             <div class="flex flex-col">
-              <img src="assets/01-bocadin.png" alt="Bocadín" class="w-full h-48 mb-4 rounded-lg object-contain bg-white" />
+              <img data-src="assets/01-bocadin.png" alt="Bocadín" class="w-full h-48 mb-4 rounded-lg object-contain bg-white lazy-load" loading="lazy" />
               <h4 class="text-xl font-bold text-gray-800 mb-2">Bocadín</h4>
               <p class="text-gray-600 text-sm mb-3">
                 Wafer bar with peanut filling covered in chocolate. Light and
@@ -123,7 +150,7 @@
             class="bg-white rounded-lg  p-6 border border-gray-200"
           >
             <div class="flex flex-col">
-              <img src="assets/01-kranky.png" alt="Kranky" class="w-full h-48 mb-4 rounded-lg object-contain bg-white" />
+              <img data-src="assets/01-kranky.png" alt="Kranky" class="w-full h-48 mb-4 rounded-lg object-contain bg-white lazy-load" loading="lazy" />
               <h4 class="text-xl font-bold text-gray-800 mb-2">Kranky</h4>
               <p class="text-gray-600 text-sm mb-3">
                 Crunchy cornflake clusters covered in chocolate. Crispy, sweet,
@@ -141,7 +168,7 @@
             class="bg-white rounded-lg  p-6 border border-gray-200"
           >
             <div class="flex flex-col">
-              <img src="assets/01-chocoretas.png" alt="Chocoreta" class="w-full h-48 mb-4 rounded-lg object-contain bg-white" />
+              <img data-src="assets/01-chocoretas.png" alt="Chocoreta" class="w-full h-48 mb-4 rounded-lg object-contain bg-white lazy-load" loading="lazy" />
               <h4 class="text-xl font-bold text-gray-800 mb-2">Chocoreta</h4>
               <p class="text-gray-600 text-sm mb-3">
                 Mini mint chocolate candies. Like minty M&Ms, cool and sweet.
@@ -166,7 +193,7 @@
             class="bg-white rounded-lg  p-6 border border-gray-200"
           >
             <div class="flex flex-col">
-              <img src="assets/02-duvalin.png" alt="Duvalín Trisabor" class="w-full h-48 mb-4 rounded-lg object-contain bg-white" />
+              <img data-src="assets/02-duvalin.png" alt="Duvalín Trisabor" class="w-full h-48 mb-4 rounded-lg object-contain bg-white lazy-load" loading="lazy" />
               <h4 class="text-xl font-bold text-gray-800 mb-2">
                 Duvalín Trisabor
               </h4>
@@ -186,7 +213,7 @@
             class="bg-white rounded-lg  p-6 border border-gray-200"
           >
             <div class="flex flex-col">
-              <img src="assets/02-mazapan.png" alt="Mazapán de la Rosa" class="w-full h-48 mb-4 rounded-lg object-contain bg-white" />
+              <img data-src="assets/02-mazapan.png" alt="Mazapán de la Rosa" class="w-full h-48 mb-4 rounded-lg object-contain bg-white lazy-load" loading="lazy" />
               <h4 class="text-xl font-bold text-gray-800 mb-2">
                 Mazapán de la Rosa
               </h4>
@@ -205,7 +232,7 @@
             class="bg-white rounded-lg  p-6 border border-gray-200"
           >
             <div class="flex flex-col">
-              <img src="assets/02-paleta-coronado.png" alt="Paleta de Cajeta Coronado" class="w-full h-48 mb-4 rounded-lg object-contain bg-white" />
+              <img data-src="assets/02-paleta-coronado.png" alt="Paleta de Cajeta Coronado" class="w-full h-48 mb-4 rounded-lg object-contain bg-white lazy-load" loading="lazy" />
               <h4 class="text-xl font-bold text-gray-800 mb-2">
                 Paleta de Cajeta Coronado
               </h4>
@@ -225,7 +252,7 @@
             class="bg-white rounded-lg  p-6 border border-gray-200"
           >
             <div class="flex flex-col">
-              <img src="assets/02-mini-glorias.png" alt="Mini Gloria" class="w-full h-48 mb-4 rounded-lg object-contain bg-white" />
+              <img data-src="assets/02-mini-glorias.png" alt="Mini Gloria" class="w-full h-48 mb-4 rounded-lg object-contain bg-white lazy-load" loading="lazy" />
               <h4 class="text-xl font-bold text-gray-800 mb-2">Mini Gloria</h4>
               <p class="text-gray-600 text-sm mb-3">
                 Goat's milk caramel candy. Creamy, smooth, and very sweet.
@@ -242,7 +269,7 @@
             class="bg-white rounded-lg  p-6 border border-gray-200"
           >
             <div class="flex flex-col">
-              <img src="assets/02-glorias-sevillanas.jpg" alt="Glorias (Las Sevillanas)" class="w-full h-48 mb-4 rounded-lg object-contain bg-white" />
+              <img data-src="assets/02-glorias-sevillanas.jpg" alt="Glorias (Las Sevillanas)" class="w-full h-48 mb-4 rounded-lg object-contain bg-white lazy-load" loading="lazy" />
               <h4 class="text-xl font-bold text-gray-800 mb-2">
                 Glorias (Las Sevillanas)
               </h4>
@@ -269,7 +296,7 @@
             class="bg-white rounded-lg  p-6 border border-gray-200"
           >
             <div class="flex flex-col">
-              <img src="assets/03-paleta-vero-cerveza.png" alt="Paleta Vero Cerveza" class="w-full h-48 mb-4 rounded-lg object-contain bg-white" />
+              <img data-src="assets/03-paleta-vero-cerveza.png" alt="Paleta Vero Cerveza" class="w-full h-48 mb-4 rounded-lg object-contain bg-white lazy-load" loading="lazy" />
               <h4 class="text-xl font-bold text-gray-800 mb-2">
                 Paleta Vero Cerveza
               </h4>
@@ -288,7 +315,7 @@
             class="bg-white rounded-lg  p-6 border border-gray-200"
           >
             <div class="flex flex-col">
-              <img src="assets/03-paleta-vero-corazon.png" alt="Paleta Vero Corazón" class="w-full h-48 mb-4 rounded-lg object-contain bg-white" />
+              <img data-src="assets/03-paleta-vero-corazon.png" alt="Paleta Vero Corazón" class="w-full h-48 mb-4 rounded-lg object-contain bg-white lazy-load" loading="lazy" />
               <h4 class="text-xl font-bold text-gray-800 mb-2">
                 Paleta Vero Corazón
               </h4>
@@ -307,7 +334,7 @@
             class="bg-white rounded-lg  p-6 border border-gray-200"
           >
             <div class="flex flex-col">
-              <img src="assets/03-paleta-payaso-mini.png" alt="Paleta Payaso Mini" class="w-full h-48 mb-4 rounded-lg object-contain bg-white" />
+              <img data-src="assets/03-paleta-payaso-mini.png" alt="Paleta Payaso Mini" class="w-full h-48 mb-4 rounded-lg object-contain bg-white lazy-load" loading="lazy" />
               <h4 class="text-xl font-bold text-gray-800 mb-2">
                 Paleta Payaso Mini
               </h4>
@@ -327,7 +354,7 @@
             class="bg-white rounded-lg  p-6 border border-gray-200"
           >
             <div class="flex flex-col">
-              <img src="assets/03-panditas-mini.png" alt="Panditas" class="w-full h-48 mb-4 rounded-lg object-contain bg-white" />
+              <img data-src="assets/03-panditas-mini.png" alt="Panditas" class="w-full h-48 mb-4 rounded-lg object-contain bg-white lazy-load" loading="lazy" />
               <h4 class="text-xl font-bold text-gray-800 mb-2">Panditas</h4>
               <p class="text-gray-600 text-sm mb-3">
                 Fruity gummy bears. Soft and sweet.
@@ -342,7 +369,7 @@
             class="bg-white rounded-lg  p-6 border border-gray-200"
           >
             <div class="flex flex-col">
-              <img src="assets/03-dulcigomas-mini.png" alt="Dulci Gomas" class="w-full h-48 mb-4 rounded-lg object-contain bg-white" />
+              <img data-src="assets/03-dulcigomas-mini.png" alt="Dulci Gomas" class="w-full h-48 mb-4 rounded-lg object-contain bg-white lazy-load" loading="lazy" />
               <h4 class="text-xl font-bold text-gray-800 mb-2">Dulci Gomas</h4>
               <p class="text-gray-600 text-sm mb-3">
                 Sugar-coated fruit gummies. Chewy and very sweet.
@@ -359,7 +386,7 @@
             class="bg-white rounded-lg  p-6 border border-gray-200"
           >
             <div class="flex flex-col">
-              <img src="assets/03-banderita-coco.png" alt="Banderita de Coco" class="w-full h-48 mb-4 rounded-lg object-contain bg-white" />
+              <img data-src="assets/03-banderita-coco.png" alt="Banderita de Coco" class="w-full h-48 mb-4 rounded-lg object-contain bg-white lazy-load" loading="lazy" />
               <h4 class="text-xl font-bold text-gray-800 mb-2">
                 Banderita de Coco
               </h4>
@@ -388,7 +415,7 @@
             class="bg-white rounded-lg  p-6 border border-gray-200"
           >
             <div class="flex flex-col">
-              <img src="assets/04-mini-pelon.png" alt="Pelón Pelo Rico" class="w-full h-48 mb-4 rounded-lg object-contain bg-white" />
+              <img data-src="assets/04-mini-pelon.png" alt="Pelón Pelo Rico" class="w-full h-48 mb-4 rounded-lg object-contain bg-white lazy-load" loading="lazy" />
               <h4 class="text-xl font-bold text-gray-800 mb-2">
                 Pelón Pelo Rico
               </h4>
@@ -408,7 +435,7 @@
             class="bg-white rounded-lg  p-6 border border-gray-200"
           >
             <div class="flex flex-col">
-              <img src="assets/04-rellerindo-orange.jpg" alt="Rellerindo (orange)" class="w-full h-48 mb-4 rounded-lg object-contain bg-white" />
+              <img data-src="assets/04-rellerindo-orange.jpg" alt="Rellerindo (orange)" class="w-full h-48 mb-4 rounded-lg object-contain bg-white lazy-load" loading="lazy" />
               <h4 class="text-xl font-bold text-gray-800 mb-2">
                 Rellerindo (orange)
               </h4>
@@ -427,7 +454,7 @@
             class="bg-white rounded-lg  p-6 border border-gray-200"
           >
             <div class="flex flex-col">
-              <img src="assets/04-rellerindo-red.png" alt="Rellerindo (red)" class="w-full h-48 mb-4 rounded-lg object-contain bg-white" />
+              <img data-src="assets/04-rellerindo-red.png" alt="Rellerindo (red)" class="w-full h-48 mb-4 rounded-lg object-contain bg-white lazy-load" loading="lazy" />
               <h4 class="text-xl font-bold text-gray-800 mb-2">
                 Rellerindo (red)
               </h4>
@@ -446,7 +473,7 @@
             class="bg-white rounded-lg  p-6 border border-gray-200"
           >
             <div class="flex flex-col">
-              <img src="assets/04-tamborines.png" alt="Tamborines" class="w-full h-48 mb-4 rounded-lg object-contain bg-white" />
+              <img data-src="assets/04-tamborines.png" alt="Tamborines" class="w-full h-48 mb-4 rounded-lg object-contain bg-white lazy-load" loading="lazy" />
               <h4 class="text-xl font-bold text-gray-800 mb-2">Tamborines</h4>
               <p class="text-gray-600 text-sm mb-3">
                 Pressed sugar discs with chili. Crunchy, sugary, and lightly
@@ -464,7 +491,7 @@
             class="bg-white rounded-lg  p-6 border border-gray-200"
           >
             <div class="flex flex-col">
-              <img src="assets/04-picafresa.png" alt="Picafresa" class="w-full h-48 mb-4 rounded-lg object-contain bg-white" />
+              <img data-src="assets/04-picafresa.png" alt="Picafresa" class="w-full h-48 mb-4 rounded-lg object-contain bg-white lazy-load" loading="lazy" />
               <h4 class="text-xl font-bold text-gray-800 mb-2">Picafresa</h4>
               <p class="text-gray-600 text-sm mb-3">
                 Strawberry gummy coated with chili sugar. Sweet, tangy, and
@@ -482,7 +509,7 @@
             class="bg-white rounded-lg  p-6 border border-gray-200"
           >
             <div class="flex flex-col">
-              <img src="assets/04-dragonzitos.png" alt="Dragonzitos" class="w-full h-48 mb-4 rounded-lg object-contain bg-white" />
+              <img data-src="assets/04-dragonzitos.png" alt="Dragonzitos" class="w-full h-48 mb-4 rounded-lg object-contain bg-white lazy-load" loading="lazy" />
               <h4 class="text-xl font-bold text-gray-800 mb-2">Dragonzitos</h4>
               <p class="text-gray-600 text-sm mb-3">
                 Fizzy fruity powder with a chili twist. Tangy/fizzy sparkle.
@@ -498,7 +525,7 @@
             class="bg-white rounded-lg  p-6 border border-gray-200"
           >
             <div class="flex flex-col">
-              <img src="assets/04-paleta-dedo.png" alt="Chupadedo" class="w-full h-48 mb-4 rounded-lg object-contain bg-white" />
+              <img data-src="assets/04-paleta-dedo.png" alt="Chupadedo" class="w-full h-48 mb-4 rounded-lg object-contain bg-white lazy-load" loading="lazy" />
               <h4 class="text-xl font-bold text-gray-800 mb-2">Chupadedo</h4>
               <p class="text-gray-600 text-sm mb-3">
                 Finger-shaped lollipop with eucalyptus-mint flavor and chili —
@@ -516,7 +543,7 @@
             class="bg-white rounded-lg  p-6 border border-gray-200"
           >
             <div class="flex flex-col">
-              <img src="assets/04-paleta-trabalenguas.jpg" alt="Trabalenguas" class="w-full h-48 mb-4 rounded-lg object-contain bg-white" />
+              <img data-src="assets/04-paleta-trabalenguas.jpg" alt="Trabalenguas" class="w-full h-48 mb-4 rounded-lg object-contain bg-white lazy-load" loading="lazy" />
               <h4 class="text-xl font-bold text-gray-800 mb-2">Trabalenguas</h4>
               <p class="text-gray-600 text-sm mb-3">
                 Layered fruit and chili — spicy, sour, and sweet as you go.
@@ -533,7 +560,7 @@
             class="bg-white rounded-lg  p-6 border border-gray-200"
           >
             <div class="flex flex-col">
-              <img src="assets/04-paleta-vero-mango.png" alt="Mango Picante" class="w-full h-48 mb-4 rounded-lg object-contain bg-white" />
+              <img data-src="assets/04-paleta-vero-mango.png" alt="Mango Picante" class="w-full h-48 mb-4 rounded-lg object-contain bg-white lazy-load" loading="lazy" />
               <h4 class="text-xl font-bold text-gray-800 mb-2">
                 Mango Picante
               </h4>
@@ -552,7 +579,7 @@
             class="bg-white rounded-lg  p-6 border border-gray-200"
           >
             <div class="flex flex-col">
-              <img src="assets/04-paleta-vero-elote-picante.jpg" alt="Elote Picante" class="w-full h-48 mb-4 rounded-lg object-contain bg-white" />
+              <img data-src="assets/04-paleta-vero-elote-picante.jpg" alt="Elote Picante" class="w-full h-48 mb-4 rounded-lg object-contain bg-white lazy-load" loading="lazy" />
               <h4 class="text-xl font-bold text-gray-800 mb-2">
                 Elote Picante
               </h4>
@@ -571,7 +598,7 @@
             class="bg-white rounded-lg  p-6 border border-gray-200"
           >
             <div class="flex flex-col">
-              <img src="assets/04-paleta-sandi-brocha.png" alt="Sandi Brochas Rellena" class="w-full h-48 mb-4 rounded-lg object-contain bg-white" />
+              <img data-src="assets/04-paleta-sandi-brocha.png" alt="Sandi Brochas Rellena" class="w-full h-48 mb-4 rounded-lg object-contain bg-white lazy-load" loading="lazy" />
               <h4 class="text-xl font-bold text-gray-800 mb-2">
                 Sandi Brochas Rellena
               </h4>
@@ -588,7 +615,7 @@
             class="bg-white rounded-lg  p-6 border border-gray-200"
           >
             <div class="flex flex-col">
-              <img src="assets/04-paleta-takis.png" alt="Takis Fuego" class="w-full h-48 mb-4 rounded-lg object-contain bg-white" />
+              <img data-src="assets/04-paleta-takis.png" alt="Takis Fuego" class="w-full h-48 mb-4 rounded-lg object-contain bg-white lazy-load" loading="lazy" />
               <h4 class="text-xl font-bold text-gray-800 mb-2">Takis Fuego</h4>
               <p class="text-gray-600 text-sm mb-3">
                 Inspired by Takis chips — spicy, sour, and chili-lime flavored.
@@ -611,6 +638,42 @@
       document.addEventListener('DOMContentLoaded', function() {
         const searchInput = document.getElementById('searchInput');
         const clearButton = document.getElementById('clearSearch');
+
+        // Lazy loading with Intersection Observer
+        function initLazyLoading() {
+          const lazyImages = document.querySelectorAll('img.lazy-load');
+          
+          if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+              entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                  const img = entry.target;
+                  img.src = img.dataset.src;
+                  img.classList.remove('lazy-load');
+                  img.classList.add('loaded');
+                  observer.unobserve(img);
+                }
+              });
+            }, {
+              rootMargin: '50px 0px', // Start loading 50px before image comes into view
+              threshold: 0.01
+            });
+
+            lazyImages.forEach(img => {
+              imageObserver.observe(img);
+            });
+          } else {
+            // Fallback for older browsers
+            lazyImages.forEach(img => {
+              img.src = img.dataset.src;
+              img.classList.remove('lazy-load');
+              img.classList.add('loaded');
+            });
+          }
+        }
+
+        // Initialize lazy loading
+        initLazyLoading();
 
         // Function to remove accents and normalize text for searching
         function normalizeText(text) {
